@@ -8,7 +8,8 @@ app.use(express.json());
 app.use(cors());
 
 // Added print statements so you know it's working!
-mongoose.connect('mongodb://127.0.0.1:27017/capstoneDB')
+// Tell Docker to connect to the MongoDB running on your Windows host!
+mongoose.connect('mongodb://host.docker.internal:27017/capstoneDB')
   .then(() => console.log("MongoDB Connected Successfully!"))
   .catch(err => console.log("MongoDB Error:", err));
 
